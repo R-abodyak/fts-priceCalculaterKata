@@ -31,7 +31,7 @@
 
     public double calculatePriceAfterTax()
     {
-        return Math.Round( price + (taxPercentage * price) ,2);
+        return Math.Round( price + ((taxPercentage/100) * price) ,2);
     }
 
 }
