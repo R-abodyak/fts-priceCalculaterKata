@@ -2,20 +2,39 @@
 {
     private String? name = null ;
     private long upc;
-    private float price;
+    private double price;
+    private double taxPercentage;
 
-    public String? Name { get; set; }
-    public long UPC { get; set; }
-    public float Price {
-        get; 
-        set(float number ){
-        Math.Round(inputValue, 2);
-      }
+    public String? Name {
+        get { return name ; }
+
+        set { name =value ; }
+    }
+    public long UPC {
+        get { return upc ;}
+        set { upc = value ;}
+    }
+
+    public double Price {
+        get
+        {
+            return Math.Round(price, 2);
+         }
+        
+        set
+        {
+            price = Math.Round(value, 2);
+
+             
+        }
+
+   
     }
 
 
     public static void Main(String [] args)
     {
+      
 
 
 
