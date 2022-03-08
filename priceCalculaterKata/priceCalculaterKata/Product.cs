@@ -3,7 +3,7 @@
     private String? name = null ;
     private long upc;
     private double price;
-    private double taxPercentage = 20;
+    private double taxPercentage = 20  ;
     
 
     public String? Name {
@@ -28,10 +28,14 @@
 
         }
     }
+    public double TaxPercentage {
+        get { return Math.Round(taxPercentage, 2); }
+        set { taxPercentage = value; }
+    }
 
     public double calculatePriceAfterTax()
     {
-        return Math.Round( price + ((taxPercentage/100) * price) ,2);
+        return Math.Round( price + (( TaxPercentage/100) * price) ,2);
     }
 
 }
