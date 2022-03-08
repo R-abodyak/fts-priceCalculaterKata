@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rawan\\source\\repos\\priceCalculaterKata\\priceCalculaterKata\\priceCalculaterKata.csproj": {}
+    "C:\\Users\\rawan\\OneDrive\\Desktop\\fts-priceCalculaterKata\\priceCalculaterKata\\priceCalculaterKata\\priceCalculaterKata.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rawan\\source\\repos\\priceCalculaterKata\\priceCalculaterKata\\priceCalculaterKata.csproj": {
+    "C:\\Users\\rawan\\OneDrive\\Desktop\\fts-priceCalculaterKata\\priceCalculaterKata\\priceCalculaterKata\\priceCalculaterKata.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rawan\\source\\repos\\priceCalculaterKata\\priceCalculaterKata\\priceCalculaterKata.csproj",
+        "projectUniqueName": "C:\\Users\\rawan\\OneDrive\\Desktop\\fts-priceCalculaterKata\\priceCalculaterKata\\priceCalculaterKata\\priceCalculaterKata.csproj",
         "projectName": "priceCalculaterKata",
-        "projectPath": "C:\\Users\\rawan\\source\\repos\\priceCalculaterKata\\priceCalculaterKata\\priceCalculaterKata.csproj",
+        "projectPath": "C:\\Users\\rawan\\OneDrive\\Desktop\\fts-priceCalculaterKata\\priceCalculaterKata\\priceCalculaterKata\\priceCalculaterKata.csproj",
         "packagesPath": "C:\\Users\\rawan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rawan\\source\\repos\\priceCalculaterKata\\priceCalculaterKata\\obj\\",
+        "outputPath": "C:\\Users\\rawan\\OneDrive\\Desktop\\fts-priceCalculaterKata\\priceCalculaterKata\\priceCalculaterKata\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rawan\\AppData\\Roaming\\NuGet\\NuGet.Config",
