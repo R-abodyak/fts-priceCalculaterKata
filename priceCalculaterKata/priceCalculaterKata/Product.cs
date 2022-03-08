@@ -25,13 +25,7 @@
         {
             price = Math.Round(value, 2);
 
-             
         }
-
-   
     }
-
-
-   
 
 }
