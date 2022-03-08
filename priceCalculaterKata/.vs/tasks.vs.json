@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-priceCalculaterKata",
+      "appliesTo": "priceCalculaterKata/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-priceCalculaterKataDemo",
+      "appliesTo": "priceCalculaterKata/priceCalculaterKataDemo.cs",
+      "type": "launch"
+    }
+  ]
+}
