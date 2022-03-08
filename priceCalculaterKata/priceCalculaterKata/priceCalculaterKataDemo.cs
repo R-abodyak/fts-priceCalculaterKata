@@ -2,7 +2,7 @@
 
 public class priceCalculaterKataDemo
 {      public  static void pricePrintingFormat(double price) {
-        string fmt = ".##";
+        string fmt = ".00";
         string formatString = " {0,0:" + fmt + "}";
         Console.WriteLine(formatString, price);
 
@@ -29,11 +29,10 @@ public class priceCalculaterKataDemo
         product.UPC = 123;
         product.Price = 20.25;
         product.TaxPercentage = 21;
-        pricePrintingFormat(product.Price);
-        product.calculatePriceAfterTax();
+        
+       pricePrintingFormat( product.calculatePriceAfterTax());
 
-
-
+         
 
 
 
