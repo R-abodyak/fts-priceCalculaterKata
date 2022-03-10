@@ -1,4 +1,4 @@
-﻿ class Product
+﻿class Product
 {
     private String? name = null ;
     private long upc;
@@ -38,12 +38,8 @@
 
     public double calculatePriceAfter()
     {
-       double result =  Math.Round(price + priceCalculation.calculateTaxAmount() - priceCalculation.calculateDiscountAmount(), 2);
-        //TODO --make Factory that call methods insted of calling here 
-        display.display("Final Price is $",result);
-        display.display("Discount Amount is $", priceCalculation.calculateDiscountAmount());
-        return result;
-    }
+       return Math.Round(price + priceCalculation.calculateTaxAmount() - priceCalculation.calculateDiscountAmount(), 2);
+     }
 
 
 }

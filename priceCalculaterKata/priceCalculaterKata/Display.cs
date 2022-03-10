@@ -14,8 +14,6 @@
         Console.Write(msg);
         Console.WriteLine(formatString, val);
         
-      
-       
     }
 
 
