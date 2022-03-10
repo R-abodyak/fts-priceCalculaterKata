@@ -1,14 +1,14 @@
-﻿ class Product
+﻿class Product
 {
     private String? name = null ;
     private long upc;
     private double price;
     public PriceCalculation priceCalculation; //compostion 
-
+    public Display display;
    public Product()
     {
         priceCalculation = new PriceCalculation();//create pricecalculation obj when create product
-
+        display = new Display();
     }
     
     public String? Name {
@@ -38,9 +38,8 @@
 
     public double calculatePriceAfter()
     {
-        
-        return Math.Round(price + priceCalculation.calculateTaxAmount() - priceCalculation.calculateDiscountAmount(), 2);
-    }
+       return Math.Round(price + priceCalculation.calculateTaxAmount() - priceCalculation.calculateDiscountAmount(), 2);
+     }
 
 
 }
