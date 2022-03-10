@@ -1,12 +1,7 @@
 ﻿using System;
 
- class priceCalculaterKataDemo
-{      public  static void pricePrintingFormat(double price) {
-        string fmt = ".00";
-        string formatString = " {0,0:" + fmt + "}";
-        Console.WriteLine(formatString, price);
-
-    }
+class priceCalculaterKataDemo
+{     
 	
         public static void Main(String[] args)
         {
@@ -30,9 +25,7 @@
         product.Price = 20.25;
         product.priceCalculation.TaxPercentage = 20;
         product.priceCalculation.DiscountPercentage = 15;
-       pricePrintingFormat( product.calculatePriceAfter());
-       
-
+        product.calculatePriceAfter();
 
 
 

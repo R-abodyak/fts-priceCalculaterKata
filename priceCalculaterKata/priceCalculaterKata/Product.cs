@@ -4,11 +4,11 @@
     private long upc;
     private double price;
     public PriceCalculation priceCalculation; //compostion 
-
+    public Display display;
    public Product()
     {
         priceCalculation = new PriceCalculation();//create pricecalculation obj when create product
-
+        display = new Display();
     }
     
     public String? Name {
@@ -38,8 +38,11 @@
 
     public double calculatePriceAfter()
     {
-        
-        return Math.Round(price + priceCalculation.calculateTaxAmount() - priceCalculation.calculateDiscountAmount(), 2);
+       double result =  Math.Round(price + priceCalculation.calculateTaxAmount() - priceCalculation.calculateDiscountAmount(), 2);
+        //TODO --make Factory that call methods insted of this method 
+        display.display("Final Price is $",result);
+        display.display("Discount Amount is $", priceCalculation.calculateDiscountAmount());
+        return result;
     }
 
 
