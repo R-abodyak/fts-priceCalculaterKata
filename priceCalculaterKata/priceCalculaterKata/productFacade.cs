@@ -1,7 +1,7 @@
 ﻿class productFacade
 {
     Product product;
-    productFacade(Product p)
+   public  productFacade(Product p)
     {
         product = p;
     }

@@ -25,7 +25,8 @@ class priceCalculaterKataDemo
         product.Price = 20.25;
         product.priceCalculation.TaxPercentage = 20;
         product.priceCalculation.DiscountPercentage = 15;
-        product.calculatePriceAfter();
+        productFacade productfacade = new productFacade(product);
+        productfacade.priceCalcAndReport();
 
 
 
