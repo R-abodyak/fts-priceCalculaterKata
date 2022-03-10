@@ -7,7 +7,7 @@
 
    public Product()
     {
-        priceCalculation = new PriceCalculation(price);//create pricecalculation obj when create product
+        priceCalculation = new PriceCalculation();//create pricecalculation obj when create product
 
     }
     
@@ -31,7 +31,7 @@
         {
             
            price = Math.Round(value, 2);
-           priceCalculation = new PriceCalculation(price);
+           priceCalculation.getPrice(price) ; // best place to pass price
         }
     }
 

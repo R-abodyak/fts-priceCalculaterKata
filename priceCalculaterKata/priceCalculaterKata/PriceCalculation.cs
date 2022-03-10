@@ -2,10 +2,12 @@
 {   private double price;
     private double taxPercentage = 20;
     private double discountPercentage;
-    public PriceCalculation(double price1) { 
-       price = price1;
+    
+    public void getPrice(double price1)
+    {
+        price = price1;
+
     }
-   
 
     public double TaxPercentage
     {
