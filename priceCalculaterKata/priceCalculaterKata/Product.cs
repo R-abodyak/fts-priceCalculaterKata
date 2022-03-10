@@ -31,7 +31,7 @@
         {
             
            price = Math.Round(value, 2);
-           priceCalculation.getPrice(price) ; // best place to pass price
+           priceCalculation.updatePrice(price) ; // best place to pass price
         }
     }
 

@@ -3,7 +3,7 @@
     private double taxPercentage = 20;
     private double discountPercentage;
     
-    public void getPrice(double price1)
+    public void updatePrice(double price1)
     {
         price = price1;
 
