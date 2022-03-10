@@ -28,9 +28,9 @@ public class priceCalculaterKataDemo
         product.Name = "mybook";
         product.UPC = 123;
         product.Price = 20.25;
-        product.TaxPercentage = 21;
-        
-       pricePrintingFormat( product.calculatePriceAfterTax());
+        product.TaxPercentage = 20;
+        product.DiscountPercentage = 15;
+       pricePrintingFormat( product.calculatePriceAfter());
 
          
 

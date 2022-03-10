@@ -58,7 +58,7 @@
     }
     public double calculatePriceAfter()
     {
-        return Math.Round (price + calculateTaxAmount() - calculateDiscountAmount());
+        return Math.Round (price + calculateTaxAmount() - calculateDiscountAmount(),2);
     }
 
 }
