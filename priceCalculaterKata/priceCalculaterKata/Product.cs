@@ -1,11 +1,16 @@
-﻿class Product
+﻿ class Product
 {
     private String? name = null ;
     private long upc;
     private double price;
-    private double taxPercentage = 20  ;
-    
+    public PriceCalculation priceCalculation; //compostion 
 
+   public Product()
+    {
+        priceCalculation = new PriceCalculation();//create pricecalculation obj when create product
+
+    }
+    
     public String? Name {
         get { return name ; }
 
@@ -24,18 +29,18 @@
         
         set
         {
-            price = Math.Round(value, 2);
-
+            
+           price = Math.Round(value, 2);
+           priceCalculation.updatePrice(price) ; // best place to pass price
         }
     }
-    public double TaxPercentage {
-        get { return Math.Round(taxPercentage, 2); }
-        set { taxPercentage = value; }
+
+
+    public double calculatePriceAfter()
+    {
+        
+        return Math.Round(price + priceCalculation.calculateTaxAmount() - priceCalculation.calculateDiscountAmount(), 2);
     }
 
-    public double calculatePriceAfterTax()
-    {
-        return Math.Round( price + (( TaxPercentage/100) * price) ,2);
-    }
 
 }
