@@ -40,7 +40,10 @@
 
     }
 
- 
+    public double calculatePriceAfterTax()
+    {
+        return Math.Round( price + (( TaxPercentage/100) * price) ,2);
+    }
 
     public double calculateTaxAmount()
     {
@@ -52,6 +55,10 @@
     {
 
         return Math.Round((discountPercentage / 100) * price, 2);
+    }
+    public double calculatePriceAfter()
+    {
+        return Math.Round (price + calculateTaxAmount() - calculateDiscountAmount());
     }
 
 }
