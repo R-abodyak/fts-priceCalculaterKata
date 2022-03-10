@@ -9,7 +9,8 @@
 
     }
     public void display(String msg , double val)
-    {  pricePrintingFormat();
+    {   if (val == 0) return;
+        pricePrintingFormat();
         Console.Write(msg);
         Console.WriteLine(formatString, val);
         

@@ -24,7 +24,6 @@ class priceCalculaterKataDemo
         product.UPC = 123;
         product.Price = 20.25;
         product.priceCalculation.TaxPercentage = 20;
-        product.priceCalculation.DiscountPercentage = 15;
         product.calculatePriceAfter();
 
 

@@ -39,7 +39,7 @@
     public double calculatePriceAfter()
     {
        double result =  Math.Round(price + priceCalculation.calculateTaxAmount() - priceCalculation.calculateDiscountAmount(), 2);
-        //TODO --make Factory that call methods insted of this method 
+        //TODO --make Factory that call methods insted of calling here 
         display.display("Final Price is $",result);
         display.display("Discount Amount is $", priceCalculation.calculateDiscountAmount());
         return result;
