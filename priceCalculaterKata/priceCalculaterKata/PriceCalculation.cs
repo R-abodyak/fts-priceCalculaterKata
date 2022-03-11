@@ -30,7 +30,7 @@
     public double calculate(double val)
     {
 
-        return (val / 100) * price ;
+        return Math.Round((val / 100) * price ,2);
     }
 
     
