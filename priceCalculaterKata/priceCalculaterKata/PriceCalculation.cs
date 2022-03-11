@@ -27,17 +27,12 @@
         price = price1;
 
     }
-    public double calculateTaxAmount()
+    public double calculate(double val)
     {
 
-        return Math.Round((TaxPercentage / 100) * price, 2);
+        return Math.Round((val / 100) * price, 2);
     }
 
-    public double calculateDiscountAmount()
-    {
-
-        return Math.Round((discountPercentage / 100) * price, 2);
-    }
     
 
 
