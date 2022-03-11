@@ -4,11 +4,12 @@
     private long upc;
     private double price;
     private double beforeTaxPrice;
-    public PriceCalculation priceCalculation; //compostion 
+    List<PriceCalculation> priceCalculation;
+
     public Display display;
    public Product()
     {
-        priceCalculation = new PriceCalculation();//create pricecalculation obj when create product
+        priceCalculation = new List<PriceCalculation>();//create pricecalculation obj when create product
         display = new Display();
     }
     
@@ -32,7 +33,8 @@
         {
             
            price = Math.Round(value, 2);
-           priceCalculation.updatePrice(price) ; // best place to pass price
+            foreach(var i in priceCalculation ) i.updatePrice(price) ; // best place to pass price
+              
         }
     }
     public double BeforeTaxPrice

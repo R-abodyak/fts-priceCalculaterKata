@@ -1,26 +1,13 @@
 ﻿class PriceCalculation
 {   private double price;
-    private double taxPercentage = 20;
-    private double discountPercentage;
-    private double upcPercentage;
-
-    public double TaxPercentage
+    private double percentage;
+    bool isBefore;
+    public double Percentage
     {
-        get { return Math.Round(taxPercentage, 2); }
-        set { taxPercentage = value; }
+        get { return Math.Round(percentage, 2); }
+        set { percentage = value; }
     }
-    public double DiscountPercentage
-    {
-        get { return Math.Round(discountPercentage, 2); }
-        set { discountPercentage = value; }
-
-    }
-    public double UpcPercentage
-    {
-        get { return Math.Round(upcPercentage, 2); }
-        set { upcPercentage = value; }
-
-    }
+  
 
     public void updatePrice(double price1)
     {
@@ -37,3 +24,4 @@
 
 
 }
+
