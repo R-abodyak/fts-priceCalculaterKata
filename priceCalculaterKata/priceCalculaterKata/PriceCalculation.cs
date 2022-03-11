@@ -2,7 +2,7 @@
 {   private double price;
     private double taxPercentage = 20;
     private double discountPercentage;
-  
+    private double upcPercentage;
 
     public double TaxPercentage
     {
@@ -13,6 +13,12 @@
     {
         get { return Math.Round(taxPercentage, 2); }
         set { discountPercentage = value; }
+
+    }
+    public double UpcPercentage
+    {
+        get { return Math.Round(upcPercentage, 2); }
+        set { upcPercentage = value; }
 
     }
 
