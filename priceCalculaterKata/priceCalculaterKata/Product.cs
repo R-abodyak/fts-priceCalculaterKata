@@ -3,6 +3,7 @@
     private String? name = null ;
     private long upc;
     private double price;
+    private double beforeTaxPrice;
     public PriceCalculation priceCalculation; //compostion 
     public Display display;
    public Product()
@@ -34,9 +35,21 @@
            priceCalculation.updatePrice(price) ; // best place to pass price
         }
     }
+    public double BeforeTaxPrice
+    {
+        get
+        {
+            return Math.Round(beforeTaxPrice, 2);
+        }
+
+       private  set
+        {
+
+            beforeTaxPrice = Math.Round(value, 2);
+        }
+    }
 
 
-   
 
 
 }

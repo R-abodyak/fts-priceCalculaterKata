@@ -20,7 +20,7 @@ class productFacade
     }
     private double FindTax()
     {
-      return (Math.Round(priceCalculation.calculate(priceCalculation.TaxPercentage), 2));
+      return (Math.Round(priceCalculation.calculate(priceCalculation.TaxPercentage,product.BeforeTaxPrice), 2));
 
     }
     private double FindTotalDiscount()
@@ -41,7 +41,7 @@ class productFacade
     }
     public void Report()
     {
-        product.display.display("base Price is $", product.Price);
+        
         product.display.display("Final Price is $",calculatePriceAfter() );
         product.display.display("Total Discount Amount is $", FindTotalDiscount());
 

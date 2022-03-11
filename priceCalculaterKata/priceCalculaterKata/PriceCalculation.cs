@@ -27,7 +27,7 @@
         price = price1;
 
     }
-    public double calculate(double val)
+    public double calculate(double val ,double price)
     {
 
         return Math.Round((val / 100) * price ,2);
