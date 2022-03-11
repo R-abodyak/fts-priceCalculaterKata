@@ -11,7 +11,7 @@
     }
     public double DiscountPercentage
     {
-        get { return Math.Round(taxPercentage, 2); }
+        get { return Math.Round(discountPercentage, 2); }
         set { discountPercentage = value; }
 
     }
@@ -30,7 +30,7 @@
     public double calculate(double val)
     {
 
-        return Math.Round((val / 100) * price, 2);
+        return (val / 100) * price ;
     }
 
     

@@ -36,10 +36,7 @@
     }
 
 
-    public double calculatePriceAfter()
-    {
-       return Math.Round(price + priceCalculation.calculateTaxAmount() - priceCalculation.calculateDiscountAmount(), 2);
-     }
+   
 
 
 }
