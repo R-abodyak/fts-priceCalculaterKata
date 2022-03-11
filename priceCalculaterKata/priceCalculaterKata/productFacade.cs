@@ -20,14 +20,12 @@ class productFacade
     }
     private double FindTax()
     {
-        
-        return (Math.Round(priceCalculation.calculate(priceCalculation.TaxPercentage), 2));
+      return (Math.Round(priceCalculation.calculate(priceCalculation.TaxPercentage), 2));
 
     }
     private double FindTotalDiscount()
     {
         double upcdiscount = (hasSpecialUpc()) ? priceCalculation.calculate(priceCalculation.UpcPercentage) : 0;
-        Console.WriteLine("upcdiscount=" + upcdiscount);
         return (Math.Round(priceCalculation.calculate(priceCalculation.DiscountPercentage)
             + upcdiscount, 2));
            
@@ -44,8 +42,6 @@ class productFacade
     public void Report()
     {
         product.display.display("base Price is $", product.Price);
-        product.display.display("Tax is $", FindTax());
-
         product.display.display("Final Price is $",calculatePriceAfter() );
         product.display.display("Total Discount Amount is $", FindTotalDiscount());
 
