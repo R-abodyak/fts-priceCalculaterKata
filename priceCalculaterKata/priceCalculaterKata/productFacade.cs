@@ -1,15 +1,49 @@
-﻿class productFacade
+﻿using System.Collections.Generic;
+
+class productFacade
 {
     Product product;
-   public  productFacade(Product p)
+    PriceCalculation priceCalculation;
+    Dictionary<long, double> dictonary;
+   public  productFacade(Product product ,PriceCalculation priceCalculation ,Dictionary<long,double>dictonary )
     {
-        product = p;
+        this.product = product;
+        this.priceCalculation = priceCalculation;
+        this.dictonary = dictonary;
+
     }
-    public void priceCalcAndReport()
+    private bool hasSpecialUpc()
     {
-        double result =product.calculatePriceAfter();
-        product.display.display("Final Price is $", result);
-        product.display.display("Discount Amount is $", product.priceCalculation.calculateDiscountAmount());
+        if (dictonary.ContainsKey(product.UPC)) return true;
+        return false;
+
+    }
+    private double FindTax()
+    {
+      return (Math.Round(priceCalculation.calculate(priceCalculation.TaxPercentage), 2));
+
+    }
+    private double FindTotalDiscount()
+    {
+        double upcdiscount = (hasSpecialUpc()) ? priceCalculation.calculate(priceCalculation.UpcPercentage) : 0;
+        return (Math.Round(priceCalculation.calculate(priceCalculation.DiscountPercentage)
+            + upcdiscount, 2));
+           
+    }
+
+    public double calculatePriceAfter()
+    {
+      
+        return Math.Round(product.Price
+            + priceCalculation.calculate(priceCalculation.TaxPercentage) 
+            - FindTotalDiscount() , 2);
+           
+    }
+    public void Report()
+    {
+        product.display.display("base Price is $", product.Price);
+        product.display.display("Final Price is $",calculatePriceAfter() );
+        product.display.display("Total Discount Amount is $", FindTotalDiscount());
 
 
     }
