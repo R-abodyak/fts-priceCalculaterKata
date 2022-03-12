@@ -25,21 +25,22 @@ class priceCalculaterKataDemo
         product.Name = "mybook";
         product.UPC = 123;
         product.Price = 20.25;
-        product.priceCalculation.TaxPercentage = 20;
-        product.priceCalculation.DiscountPercentage = 15;
-        product.priceCalculation.UpcPercentage = 7;
+        
+        product.productPercentage.TaxPercentage = 20;
+        product.productPercentage.DiscountPercentage = 15;
+        product.productPercentage.UpcPercentage = 7;
 
         product2.Name = "mychair";
         product2.UPC = 129;
         product2.Price = 20.25;
-        product2.priceCalculation.TaxPercentage = 21;
-        product2.priceCalculation.DiscountPercentage = 15;
-        product2.priceCalculation.UpcPercentage = 7;
+        product2.productPercentage.TaxPercentage = 21;
+        product2.productPercentage.DiscountPercentage = 15;
+        product2.productPercentage.UpcPercentage = 7;
 
         Dictionary<long, double> mydictionary = new Dictionary<long, double>();
         mydictionary.Add(product.UPC, product.Price);
-        productFacade productfacade2 = new productFacade(product2, product2.priceCalculation, mydictionary);
-        productFacade productfacade = new productFacade(product,product.priceCalculation, mydictionary);
+        productFacade productfacade2 = new productFacade(product2, product2.productPercentage, mydictionary);
+        productFacade productfacade = new productFacade(product,product.productPercentage, mydictionary);
         productfacade.Report();
         productfacade2.Report();
 

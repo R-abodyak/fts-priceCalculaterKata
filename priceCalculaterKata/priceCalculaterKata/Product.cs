@@ -3,16 +3,15 @@
     private String? name = null ;
     private long upc;
     private double price;
-    public List<PriceCalculation> priceCalculation;
- 
-
+    public List<ProductPercentge> productPercentage;
     public Display display;
    public Product()
     {
-        priceCalculation = new List<PriceCalculation>();//create pricecalculation obj when create product
+        productPercentage = new List<ProductPercentge>();//create pricecalculation obj when create product
         display = new Display();
     }
     
+
     public String? Name {
         get { return name ; }
 
@@ -33,7 +32,6 @@
         {
             
            price = Math.Round(value, 2);
-            foreach(var i in priceCalculation ) i.updatePrice(price) ; // best place to pass price
               
         }
     }

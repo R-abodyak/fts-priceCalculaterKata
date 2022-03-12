@@ -1,6 +1,6 @@
-﻿class PriceCalculation
-{   private double price;
-    private double percentage;
+﻿class ProductPercentge
+{  
+    private double percentage=0;
     //TODO -geter ,seter
     public bool isbefore;
     public String Type;
@@ -11,11 +11,6 @@
     }
   
 
-    public void updatePrice(double price1)
-    {
-        price = price1;
-
-    }
     public static double calculate(double val ,double price)
     {
 
