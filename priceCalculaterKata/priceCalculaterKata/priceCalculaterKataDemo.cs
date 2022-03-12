@@ -24,7 +24,7 @@ class priceCalculaterKataDemo
         ProductPercentge twentyonePercenTax = new ProductPercentge(21, false, "tax");
 
         ProductPercentge Udiscount = new ProductPercentge(15, false, "discount");
-        ProductPercentge upc = new ProductPercentge(7, false, "upcdiscount");
+        ProductPercentge upc = new ProductPercentge(7, true, "upcdiscount");
         Dictionary<long, double> mydictionary = new Dictionary<long, double>();
 
         Product product = new Product();
