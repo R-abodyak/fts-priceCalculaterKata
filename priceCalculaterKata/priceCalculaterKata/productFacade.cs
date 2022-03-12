@@ -28,7 +28,7 @@ class productFacade
     {
 
         return Math.Round(product.Price
-            + CalculateTax()-calculateTotalDiscount(), 2);
+            + FindTax()-calculateTotalDiscount(), 2);
 
     }
     public double calculateTotalDiscount()
@@ -48,7 +48,7 @@ class productFacade
         return false;
 
     }
-    private double CalculateTax()
+    private double FindTax()
     {
         double priceBeforeTax = PriceBeforeTax(calculateDiscountBefore());
 
