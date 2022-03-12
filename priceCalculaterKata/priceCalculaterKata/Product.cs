@@ -36,6 +36,14 @@
         }
     }
 
+    //percentage obj will be instanced in run time since
+    //for example :its possible in real life to apply same tax in different products 
+    public void addPercentage(ProductPercentge ProductPercentgeItem) {
+
+        productPercentage.Add(ProductPercentgeItem);
+
+
+    }
 
 
 
