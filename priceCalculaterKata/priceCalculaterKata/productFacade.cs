@@ -15,8 +15,10 @@ class productFacade
     }
 
     public void Report()
-    {
-
+    {    // Debug statements
+        //product.display.display("DiscountBefore $", calculateDiscountBefore());
+       // product.display.display("Tax $", FindTax());
+       // product.display.display("DiscountAfter $", calculateDiscountAfter());
         product.display.display("Final Price is $", calculatePriceAfter());
         product.display.display("Total Discount Amount is $", calculateTotalDiscount());
 
@@ -73,11 +75,11 @@ class productFacade
             if (product.productPercentage[i].IsBefore == true) continue;
             double upcdiscount = (hasSpecialUpc()) ? ProductPercentge.calculate(product.productPercentage[i].Percentage,priceBeforeTax) : 0;
 
-            return result += product.productPercentage[i].Type == "upcdiscount" ?
+             result += product.productPercentage[i].Type == "upcdiscount" ?upcdiscount : ProductPercentge.calculate
+                (product.productPercentage[i].Percentage, priceBeforeTax);
 
-                calculateupcDiscount(product.productPercentage[i].Percentage, product.Price)
-                : ProductPercentge.calculate
-                (product.productPercentage[i].Percentage, product.Price);
+                
+               
 
 
         }
@@ -102,9 +104,9 @@ class productFacade
         return result;
     }
 
-    private double PriceBeforeTax(double discountBeforeAmount)
+    private double PriceBeforeTax(double calculateDiscountBefore)
     {
-        return product.Price - discountBeforeAmount;
+        return product.Price - calculateDiscountBefore;
     }
    
    
