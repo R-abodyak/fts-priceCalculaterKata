@@ -3,8 +3,8 @@
     private String? name = null ;
     private long upc;
     private double price;
-    private double beforeTaxPrice;
-    List<PriceCalculation> priceCalculation;
+    public List<PriceCalculation> priceCalculation;
+ 
 
     public Display display;
    public Product()
@@ -37,19 +37,7 @@
               
         }
     }
-    public double BeforeTaxPrice
-    {
-        get
-        {
-            return Math.Round(beforeTaxPrice, 2);
-        }
 
-       private  set
-        {
-
-            beforeTaxPrice = Math.Round(value, 2);
-        }
-    }
 
 
 

@@ -12,6 +12,28 @@ class productFacade
         this.dictonary = dictonary;
 
     }
+
+    public void Report()
+    {
+
+        product.display.display("Final Price is $", calculatePriceAfter());
+        product.display.display("Total Discount Amount is $", calculateTotalDiscount());
+
+
+    }
+    public double calculatePriceAfter()
+    {
+
+        return Math.Round(product.Price
+            + FindTax()-calculateTotalDiscount(), 2);
+
+    }
+    public double calculateTotalDiscount()
+    {
+
+        return Math.Round(calculateDiscountAfter()+calculateDiscountBefore(), 2);
+
+    }
     private bool hasSpecialUpc()
     {
         if (dictonary.ContainsKey(product.UPC)) return true;
@@ -20,32 +42,57 @@ class productFacade
     }
     private double FindTax()
     {
-      return (Math.Round(priceCalculation.calculate(priceCalculation.TaxPercentage,product.BeforeTaxPrice), 2));
+        double priceBeforeTax = PriceBeforeTax(calculateDiscountBefore());
+
+        for (int i = 0; i < product.priceCalculation.Count; i++)
+        {
+            if (product.priceCalculation[i].Type != "tax") continue;
+
+            return (Math.Round(PriceCalculation.calculate(product.priceCalculation[i].Percentage, priceBeforeTax), 2));
+
+
+
+        }
+        return 0;
 
     }
-    private double FindTotalDiscount()
+    private double calculateDiscountAfter()
+
     {
-        double upcdiscount = (hasSpecialUpc()) ? priceCalculation.calculate(priceCalculation.UpcPercentage) : 0;
-        return (Math.Round(priceCalculation.calculate(priceCalculation.DiscountPercentage)
-            + upcdiscount, 2));
+        double priceBeforeTax = PriceBeforeTax(calculateDiscountBefore());
+        for (int i = 0; i < product.priceCalculation.Count; i++)
+        {
+            if (product.priceCalculation[i].Type != "discount") continue;
+            if (product.priceCalculation[i].isbefore == true) continue;
+            double upcdiscount = (hasSpecialUpc()) ? PriceCalculation.calculate(product.priceCalculation[i].Percentage,priceBeforeTax) : 0;
+           
+            return (Math.Round(upcdiscount, 2));
+            
+
+        }
+        return 0;
            
     }
-
-    public double calculatePriceAfter()
+    private double calculateDiscountBefore()
     {
-      
-        return Math.Round(product.Price
-            + priceCalculation.calculate(priceCalculation.TaxPercentage) 
-            - FindTotalDiscount() , 2);
-           
+        double result = 0;
+        for (int i = 0; i < product.priceCalculation.Count; i++)
+        {
+            if (product.priceCalculation[i].Type != "discount") continue;
+            if (product.priceCalculation[i].isbefore == false) continue;
+            result += PriceCalculation.calculate
+                (product.priceCalculation[i].Percentage, product.Price);
+
+        }
+       
+        return result;
     }
-    public void Report()
+
+    private double PriceBeforeTax(double discountBeforeAmount)
     {
-        
-        product.display.display("Final Price is $",calculatePriceAfter() );
-        product.display.display("Total Discount Amount is $", FindTotalDiscount());
-
-
+        return product.Price - discountBeforeAmount;
     }
+
+   
 
 }

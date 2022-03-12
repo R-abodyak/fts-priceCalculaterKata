@@ -1,7 +1,9 @@
 ﻿class PriceCalculation
 {   private double price;
     private double percentage;
-    bool isBefore;
+    //TODO -geter ,seter
+    public bool isbefore;
+    public String Type;
     public double Percentage
     {
         get { return Math.Round(percentage, 2); }
@@ -14,7 +16,7 @@
         price = price1;
 
     }
-    public double calculate(double val ,double price)
+    public static double calculate(double val ,double price)
     {
 
         return Math.Round((val / 100) * price ,2);
@@ -22,6 +24,6 @@
 
     
 
-
 }
+
 
