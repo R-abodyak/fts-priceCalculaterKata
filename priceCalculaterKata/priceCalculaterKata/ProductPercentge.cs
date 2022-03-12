@@ -4,6 +4,11 @@
     //TODO -geter ,seter
     private bool isbefore;
     private String type;
+    public ProductPercentge(double percentage , bool isbefore , String type) {
+        this.percentage = percentage;
+        this.isbefore = isbefore;
+        this.type = type;
+    }
     public double Percentage
     {
         get { return Math.Round(percentage, 2); }
