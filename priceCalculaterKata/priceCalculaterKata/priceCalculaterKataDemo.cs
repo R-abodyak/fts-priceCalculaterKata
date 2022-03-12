@@ -20,26 +20,33 @@ class priceCalculaterKataDemo
       Console.WriteLine("product Name is " + 
           product.Name + "\n upc is " + product.UPC + "\n price is "+ product.Price);
         */
+        ProductPercentge twentyPercenTax = new ProductPercentge(20, false, "tax");
+        ProductPercentge twentyonePercenTax = new ProductPercentge(21, false, "tax");
+
+        ProductPercentge Udiscount = new ProductPercentge(15, false, "discount");
+        ProductPercentge upc = new ProductPercentge(7, true, "upcdiscount");
+        Dictionary<long, double> mydictionary = new Dictionary<long, double>();
+
         Product product = new Product();
         Product product2 = new Product();
         product.Name = "mybook";
         product.UPC = 123;
         product.Price = 20.25;
-        product.priceCalculation.TaxPercentage = 20;
-        product.priceCalculation.DiscountPercentage = 15;
-        product.priceCalculation.UpcPercentage = 7;
+        mydictionary.Add(product.UPC, product.Price);
+        product.addPercentage(twentyPercenTax);
+        product.addPercentage(upc);
+        product.addPercentage(Udiscount);
+
+        
 
         product2.Name = "mychair";
         product2.UPC = 129;
         product2.Price = 20.25;
-        product2.priceCalculation.TaxPercentage = 21;
-        product2.priceCalculation.DiscountPercentage = 15;
-        product2.priceCalculation.UpcPercentage = 7;
-
-        Dictionary<long, double> mydictionary = new Dictionary<long, double>();
-        mydictionary.Add(product.UPC, product.Price);
-        productFacade productfacade2 = new productFacade(product2, product2.priceCalculation, mydictionary);
-        productFacade productfacade = new productFacade(product,product.priceCalculation, mydictionary);
+        product2.addPercentage(twentyonePercenTax);
+        product2.addPercentage(upc);
+        product2.addPercentage(Udiscount);
+        productFacade productfacade2 = new productFacade(product2, product2.productPercentage, mydictionary);
+        productFacade productfacade = new productFacade(product,product.productPercentage, mydictionary);
         productfacade.Report();
         productfacade2.Report();
 

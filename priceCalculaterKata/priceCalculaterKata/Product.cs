@@ -3,14 +3,15 @@
     private String? name = null ;
     private long upc;
     private double price;
-    public PriceCalculation priceCalculation; //compostion 
+    public List<ProductPercentge> productPercentage;
     public Display display;
    public Product()
     {
-        priceCalculation = new PriceCalculation();//create pricecalculation obj when create product
+        productPercentage = new List<ProductPercentge>();//create pricecalculation obj when create product
         display = new Display();
     }
     
+
     public String? Name {
         get { return name ; }
 
@@ -31,12 +32,20 @@
         {
             
            price = Math.Round(value, 2);
-           priceCalculation.updatePrice(price) ; // best place to pass price
+              
         }
     }
 
+    //percentage obj will be instanced in run time since
+    //for example :its possible in real life to apply same tax in different products 
+    public void addPercentage(ProductPercentge ProductPercentgeItem) {
 
-   
+        productPercentage.Add(ProductPercentgeItem);
+
+
+    }
+
+
 
 
 }
