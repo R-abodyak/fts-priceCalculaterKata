@@ -46,7 +46,7 @@ class productFacade
 
         for (int i = 0; i < product.productPercentage.Count; i++)
         {
-            if (product.productPercentage[i].Type != "tax") continue;
+            if (product.productPercentage[i].type != "tax") continue;
 
             return (Math.Round(ProductPercentge.calculate(product.productPercentage[i].Percentage, priceBeforeTax), 2));
 
@@ -62,7 +62,7 @@ class productFacade
         double priceBeforeTax = PriceBeforeTax(calculateDiscountBefore());
         for (int i = 0; i < product.productPercentage.Count; i++)
         {
-            if (product.productPercentage[i].Type != "discount") continue;
+            if (product.productPercentage[i].type != "discount") continue;
             if (product.productPercentage[i].isbefore == true) continue;
             double upcdiscount = (hasSpecialUpc()) ? ProductPercentge.calculate(product.productPercentage[i].Percentage,priceBeforeTax) : 0;
            
@@ -78,7 +78,7 @@ class productFacade
         double result = 0;
         for (int i = 0; i < product.productPercentage.Count; i++)
         {
-            if (product.productPercentage[i].Type != "discount") continue;
+            if (product.productPercentage[i].type != "discount") continue;
             if (product.productPercentage[i].isbefore == false) continue;
             result += ProductPercentge.calculate
                 (product.productPercentage[i].Percentage, product.Price);
