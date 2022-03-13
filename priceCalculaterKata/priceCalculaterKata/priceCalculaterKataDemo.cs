@@ -21,9 +21,10 @@ class priceCalculaterKataDemo
           product.Name + "\n upc is " + product.UPC + "\n price is "+ product.Price);
         */
         ProductPercentgeBase twentyPercenTax = new ProductPercentgeBase(20, "tax");
-        Discount twentyonePercenTax = new Discount(21, false, "tax");
+        ProductPercentgeBase twentyonePercenTax = new Discount(21, false, "tax");
 
         ProductPercentgeBase Udiscount = new Discount(15, false, "discount");
+        
         ProductPercentgeBase upc = new Discount(7, true, "upcdiscount");
         Dictionary<long, double> mydictionary = new Dictionary<long, double>();
 

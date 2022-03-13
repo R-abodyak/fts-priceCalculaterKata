@@ -16,6 +16,7 @@ class productFacade
 
     public void Report()
     {    // Debug statements
+       
         product.display.display("DiscountBefore $", calculateDiscountBefore());
         product.display.display("Tax $", FindTax());
         product.display.display("DiscountAfter $", calculateDiscountAfter());
@@ -71,11 +72,13 @@ class productFacade
         double priceBeforeTax = PriceBeforeTax(calculateDiscountBefore());
         for (int i = 0; i < product.productPercentage.Count; i++)
         {
-            if (product.productPercentage[i].Type != "discount" || product.productPercentage[i].Type != "upcdiscount") continue;
+          
+            if ((product.productPercentage[i].Type != "discount" && product.productPercentage[i].Type != "upcdiscount")) continue;
             //type casting
+            
             Discount discountObj =(Discount) product.productPercentage[i];
             if (discountObj.IsBefore == true) continue;
-            Console.WriteLine("you should print this");
+            
             double upcdiscount = (hasSpecialUpc()) ? new ProductPercentgeBase ().calculate(product.productPercentage[i].Percentage,priceBeforeTax) : 0;
 
              result += product.productPercentage[i].Type == "upcdiscount" ?upcdiscount : new ProductPercentgeBase().calculate
@@ -91,8 +94,12 @@ class productFacade
     private double calculateDiscountBefore()
     {
         double result = 0;
+       
         for (int i = 0; i < product.productPercentage.Count; i++)
-        {   if (product.productPercentage[i].Type != "discount" || product.productPercentage[i].Type != "upcdiscount") continue;
+        {
+            if ((product.productPercentage[i].Type != "discount" && product.productPercentage[i].Type != "upcdiscount")) continue;
+           
+
             Discount discountObj = (Discount) product.productPercentage[i];
             if (discountObj.IsBefore == false) continue;
             
