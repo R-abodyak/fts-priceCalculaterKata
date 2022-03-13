@@ -13,9 +13,9 @@
         set { type = value; }
     }
 
-    public static double calculate(double val, double price)
+    public  double calculate( double price)
     {
 
-        return Math.Round((val / 100) * price, 2);
+        return Math.Round((percentage / 100) * price, 2);
     }
 }
