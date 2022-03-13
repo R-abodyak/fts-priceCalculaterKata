@@ -73,7 +73,7 @@ class productFacade
         {
             if (product.productPercentage[i].Type != "discount" || product.productPercentage[i].Type != "upcdiscount") continue;
             //type casting
-            ProductPercentge discountObj =(ProductPercentge) product.productPercentage[i];
+            Discount discountObj =(Discount) product.productPercentage[i];
             if (discountObj.IsBefore == true) continue;
             double upcdiscount = (hasSpecialUpc()) ? new ProductPercentgeBase ().calculate(product.productPercentage[i].Percentage,priceBeforeTax) : 0;
 
@@ -93,7 +93,7 @@ class productFacade
         double result = 0;
         for (int i = 0; i < product.productPercentage.Count; i++)
         {
-            ProductPercentge discountObj = (ProductPercentge) product.productPercentage[i];
+            Discount discountObj = (Discount) product.productPercentage[i];
             if (discountObj.IsBefore == false) continue;
 
             result += product.productPercentage[i].Type=="upcdiscount"?

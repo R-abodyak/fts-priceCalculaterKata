@@ -1,9 +1,9 @@
 ﻿
 
-class ProductPercentge : ProductPercentgeBase
+class Discount : ProductPercentgeBase
 {
     private bool isbefore;
-    public ProductPercentge(double percentage , bool isbefore , String type) {
+    public Discount(double percentage , bool isbefore , String type) {
         this.Percentage = percentage;
         this.isbefore = isbefore;
         this.Type = type;
