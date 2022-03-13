@@ -3,11 +3,11 @@
     private String? name = null ;
     private long upc;
     private double price;
-    public List<ProductPercentge> productPercentage;
+    public List<ProductPercentgeBase> productPercentage;
     public Display display;
    public Product()
     {
-        productPercentage = new List<ProductPercentge>();//create pricecalculation obj when create product
+        productPercentage = new List<ProductPercentgeBase>();//create pricecalculation obj when create product
         display = new Display();
     }
     
@@ -38,7 +38,7 @@
 
     //percentage obj will be instanced in run time since
     //for example :its possible in real life to apply same tax in different products 
-    public void addPercentage(ProductPercentge ProductPercentgeItem) {
+    public void addPercentage(ProductPercentgeBase ProductPercentgeItem) {
 
         productPercentage.Add(ProductPercentgeItem);
 

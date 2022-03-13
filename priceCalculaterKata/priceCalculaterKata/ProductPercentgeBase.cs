@@ -13,7 +13,7 @@
         set { type = value; }
     }
 
-    public  double calculate( double price)
+    public  virtual double  calculate( double percentage ,double price)
     {
 
         return Math.Round((percentage / 100) * price, 2);

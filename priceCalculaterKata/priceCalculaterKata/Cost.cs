@@ -25,11 +25,11 @@
         set { description = value; }
     }
 
-    public override double  calculate(double price)
+    public override double  calculate(double percentage ,double price)
     {
         if (!ispercentage) return Amount;
 
-        return base.calculate(price);
+        return base.calculate(percentage,sprice);
        
     }
 }
