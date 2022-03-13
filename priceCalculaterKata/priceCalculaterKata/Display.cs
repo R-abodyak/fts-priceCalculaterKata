@@ -3,7 +3,7 @@
     String formatString;
     private  void pricePrintingFormat()
     {
-        string fmt = ".00";
+        string fmt = "0.00";
         formatString = "{0:" + fmt + "}";
         
 

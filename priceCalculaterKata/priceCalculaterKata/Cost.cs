@@ -7,6 +7,7 @@
     {
         this.Type = "cost";
         this.amount = amount;
+        this.Percentage = amount;//unless, percentage is zero
         this.isPercentage = isPercentage;
         this.description = description;
     }

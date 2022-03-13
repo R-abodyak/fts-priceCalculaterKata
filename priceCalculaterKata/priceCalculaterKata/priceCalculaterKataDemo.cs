@@ -24,7 +24,8 @@ class priceCalculaterKataDemo
         ProductPercentgeBase twentyonePercenTax = new Discount(21, false, "tax");
 
         ProductPercentgeBase Udiscount = new Discount(15, false, "discount");
-        
+        ProductPercentgeBase Udiscount2 = new Discount(11, false, "discount");
+
         ProductPercentgeBase upc = new Discount(7, false, "upcdiscount");
         ProductPercentgeBase packging = new Cost(1,true,"packging cost");
         ProductPercentgeBase transport = new Cost(2.2, false, "transport cost");
@@ -32,14 +33,17 @@ class priceCalculaterKataDemo
         Dictionary<long, double> mydictionary = new Dictionary<long, double>();
 
         Product product = new Product();
+        //product.discountWay = "additive";
+        product.discountWay = "multiplicative";
         Product product2 = new Product();
         product.Name = "mybook";
         product.UPC = 123;
         product.Price = 20.25;
         mydictionary.Add(product.UPC, product.Price);
         product.addPercentage(twentyonePercenTax);
+      
+        product.addPercentage(Udiscount); 
         product.addPercentage(upc);
-        product.addPercentage(Udiscount);
         product.addPercentage(transport);
         product.addPercentage(packging);
 
@@ -54,7 +58,7 @@ class priceCalculaterKataDemo
         productFacade productfacade2 = new productFacade(product2, product2.productPercentage, mydictionary);
         productFacade productfacade = new productFacade(product,product.productPercentage, mydictionary);
         productfacade.Report();
-        productfacade2.Report();
+        //productfacade2.Report();
 
 
 

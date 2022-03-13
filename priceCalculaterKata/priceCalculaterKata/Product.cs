@@ -5,6 +5,7 @@
     private double price;
     public List<ProductPercentgeBase> productPercentage;
     public Display display;
+    
    public Product()
     {
         productPercentage = new List<ProductPercentgeBase>();//create pricecalculation obj when create product
@@ -35,6 +36,9 @@
               
         }
     }
+    public String discountWay
+    { get; set; }
+        
 
     //percentage obj will be instanced in run time since
     //for example :its possible in real life to apply same tax in different products 
