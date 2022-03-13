@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 
+//TO-DO there is simillarity in all calculate functions
 class productFacade
 {
     Product product;
@@ -16,12 +17,14 @@ class productFacade
 
     public void Report()
     {    // Debug statements
-       
+      
+        product.display.display("Tax $", FindTax()); 
         product.display.display("DiscountBefore $", calculateDiscountBefore());
-        product.display.display("Tax $", FindTax());
-        product.display.display("DiscountAfter $", calculateDiscountAfter());
-        product.display.display("Final Price is $", calculatePriceAfter());
+        product.display.display("DiscountAfter $", calculateDiscountAfter());   
         product.display.display("Total Discount Amount is $", calculateTotalDiscount());
+        product.display.display("cost $", calculateCost());
+
+        product.display.display("Final Price is $", calculatePriceAfter());
 
 
     }
@@ -29,8 +32,21 @@ class productFacade
     {
 
         return Math.Round(product.Price
-            + FindTax()-calculateTotalDiscount(), 2);
+            + FindTax()-calculateTotalDiscount()+calculateCost(), 2);
 
+    }
+    public double calculateCost()
+    {
+        double result = 0;
+        double priceBeforeTax = PriceBeforeTax(calculateDiscountBefore());
+        for (int i = 0; i < product.productPercentage.Count; i++)
+        {
+            if (product.productPercentage[i].Type != "cost") continue;
+            Cost costObj = (Cost)product.productPercentage[i];
+            result +=costObj.calculate(product.productPercentage[i].Percentage, priceBeforeTax);
+
+        }
+        return Math.Round(result, 2);
     }
     public double calculateTotalDiscount()
     {
@@ -86,7 +102,7 @@ class productFacade
 
 
         }
-        Console.WriteLine(result);
+     
 
         return result;
            

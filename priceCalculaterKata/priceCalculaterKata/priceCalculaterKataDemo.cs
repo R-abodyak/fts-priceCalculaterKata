@@ -25,7 +25,10 @@ class priceCalculaterKataDemo
 
         ProductPercentgeBase Udiscount = new Discount(15, false, "discount");
         
-        ProductPercentgeBase upc = new Discount(7, true, "upcdiscount");
+        ProductPercentgeBase upc = new Discount(7, false, "upcdiscount");
+        ProductPercentgeBase packging = new Cost(1,true,"packging cost");
+        ProductPercentgeBase transport = new Cost(2.2, false, "transport cost");
+
         Dictionary<long, double> mydictionary = new Dictionary<long, double>();
 
         Product product = new Product();
@@ -34,9 +37,11 @@ class priceCalculaterKataDemo
         product.UPC = 123;
         product.Price = 20.25;
         mydictionary.Add(product.UPC, product.Price);
-        product.addPercentage(twentyPercenTax);
+        product.addPercentage(twentyonePercenTax);
         product.addPercentage(upc);
         product.addPercentage(Udiscount);
+        product.addPercentage(transport);
+        product.addPercentage(packging);
 
         
 

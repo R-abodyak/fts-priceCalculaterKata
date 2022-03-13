@@ -3,7 +3,7 @@
     private bool isPercentage;
     private String description;
 
-     Cost(double amount ,bool isPercentage,String description)
+     public Cost(double amount ,bool isPercentage,String description)
     {
         this.Type = "cost";
         this.amount = amount;
