@@ -33,8 +33,10 @@ class priceCalculaterKataDemo
         Dictionary<long, double> mydictionary = new Dictionary<long, double>();
 
         Product product = new Product();
+     
         //product.discountWay = "additive";
-        product.discountWay = "multiplicative";
+       
+        product.productaccessories.discountWay = "multiplicative";
         Product product2 = new Product();
         product.Name = "mybook";
         product.UPC = 123;

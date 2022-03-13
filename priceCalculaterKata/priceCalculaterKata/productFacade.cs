@@ -112,7 +112,7 @@ class productFacade
 
              double discount= product.productPercentage[i].Type == "upcdiscount" ?upcdiscount : new ProductPercentgeBase().calculate
                 (product.productPercentage[i].Percentage, price);
-            if (product.discountWay == "multiplicative")
+            if (product.productaccessories.discountWay == "multiplicative")
             {
                 price -= discount;
 
@@ -145,7 +145,7 @@ class productFacade
                 calculateupcDiscount(product.productPercentage[i].Percentage, price )
                 :new ProductPercentgeBase().calculate
                 (product.productPercentage[i].Percentage, price);
-            if(product.discountWay=="multiplicative")
+            if(product.productaccessories.discountWay=="multiplicative")
             {
                 price -= discount;
                 
