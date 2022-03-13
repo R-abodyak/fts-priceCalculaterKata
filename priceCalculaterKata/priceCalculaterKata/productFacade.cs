@@ -16,9 +16,9 @@ class productFacade
 
     public void Report()
     {    // Debug statements
-        //product.display.display("DiscountBefore $", calculateDiscountBefore());
-       // product.display.display("Tax $", FindTax());
-       // product.display.display("DiscountAfter $", calculateDiscountAfter());
+        product.display.display("DiscountBefore $", calculateDiscountBefore());
+        product.display.display("Tax $", FindTax());
+        product.display.display("DiscountAfter $", calculateDiscountAfter());
         product.display.display("Final Price is $", calculatePriceAfter());
         product.display.display("Total Discount Amount is $", calculateTotalDiscount());
 
@@ -75,16 +75,16 @@ class productFacade
             //type casting
             Discount discountObj =(Discount) product.productPercentage[i];
             if (discountObj.IsBefore == true) continue;
+            Console.WriteLine("you should print this");
             double upcdiscount = (hasSpecialUpc()) ? new ProductPercentgeBase ().calculate(product.productPercentage[i].Percentage,priceBeforeTax) : 0;
 
              result += product.productPercentage[i].Type == "upcdiscount" ?upcdiscount : new ProductPercentgeBase().calculate
                 (product.productPercentage[i].Percentage, priceBeforeTax);
 
-                
-               
-
 
         }
+        Console.WriteLine(result);
+
         return result;
            
     }
@@ -92,10 +92,10 @@ class productFacade
     {
         double result = 0;
         for (int i = 0; i < product.productPercentage.Count; i++)
-        {
+        {   if (product.productPercentage[i].Type != "discount" || product.productPercentage[i].Type != "upcdiscount") continue;
             Discount discountObj = (Discount) product.productPercentage[i];
             if (discountObj.IsBefore == false) continue;
-
+            
             result += product.productPercentage[i].Type=="upcdiscount"?
 
                 calculateupcDiscount(product.productPercentage[i].Percentage, product.Price )

@@ -1,7 +1,12 @@
 ﻿public class ProductPercentgeBase
 {   private double percentage = 0;
     private String type;
-       
+    public ProductPercentgeBase(double percentage,String type)
+    {
+        this.percentage = percentage;
+        this.type = type;
+    }
+   public ProductPercentgeBase() { }
     public double Percentage
     {
         get { return Math.Round(percentage, 2); }

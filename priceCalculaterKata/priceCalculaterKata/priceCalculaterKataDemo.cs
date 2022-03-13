@@ -20,7 +20,7 @@ class priceCalculaterKataDemo
       Console.WriteLine("product Name is " + 
           product.Name + "\n upc is " + product.UPC + "\n price is "+ product.Price);
         */
-        Discount twentyPercenTax = new Discount(20, false, "tax");
+        ProductPercentgeBase twentyPercenTax = new ProductPercentgeBase(20, "tax");
         Discount twentyonePercenTax = new Discount(21, false, "tax");
 
         ProductPercentgeBase Udiscount = new Discount(15, false, "discount");

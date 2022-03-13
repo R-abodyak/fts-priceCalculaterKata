@@ -2,7 +2,8 @@
 {   private double amount ;
     private bool isPercentage;
     private String description;
-    Cost(double amount ,bool isPercentage,String description)
+
+     Cost(double amount ,bool isPercentage,String description)
     {
         this.Type = "cost";
         this.amount = amount;
@@ -29,7 +30,7 @@
     {
         if (!ispercentage) return Amount;
 
-        return base.calculate(percentage,sprice);
+        return base.calculate(percentage,price);
        
     }
 }
