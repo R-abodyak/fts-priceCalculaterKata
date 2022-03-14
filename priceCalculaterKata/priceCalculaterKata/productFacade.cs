@@ -63,9 +63,8 @@ class productFacade
     }
     public double calculateTotalDiscount()
     {
-
-        return Math.Round(calculateDiscountAfter()+calculateDiscountBefore(), 2);
-
+        double initialDiscount = Math.Round(calculateDiscountAfter()+calculateDiscountBefore(), 2);
+        return Math.Min(initialDiscount, product.productaccessories.CalculateCapAmount());
     }
     private double calculateupcDiscount(double percentage , double price )
     {
