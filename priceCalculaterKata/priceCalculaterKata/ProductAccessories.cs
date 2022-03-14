@@ -4,8 +4,14 @@
     { get; set; }
     private (double amount ,ValueType type ) cap;
     private double basePrice;
+    private ISO3 currency;
     public ProductAccessories(double basePrice) {
         this.basePrice = basePrice;
+    }
+    public ISO3 Currency
+    {
+        get { return currency; }
+        set { this.currency = value; }
     }
     public (double amount, ValueType type) CAP {
         set { cap = value; }
@@ -32,4 +38,11 @@ public enum ValueType
 {
     percentage,
      absolute
+}
+public enum ISO3
+{
+    USD,
+    GBP,
+    JPY
+    
 }

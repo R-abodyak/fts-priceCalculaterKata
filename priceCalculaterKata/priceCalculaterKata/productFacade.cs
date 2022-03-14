@@ -17,13 +17,13 @@ class productFacade
 
     public void Report()
     {    // Debug statements
-        product.display.display("Cost $",product.Price);
-        product.display.display("Tax $", FindTax()); 
+        product.display.display("Cost ",product.productaccessories.Currency,product.Price );
+        product.display.display("Tax ",product.productaccessories.Currency, FindTax()); 
         //product.display.display("DiscountBefore $", calculateDiscountBefore());
         //product.display.display("DiscountAfter $", calculateDiscountAfter());   
-        product.display.display("Discount $", calculateTotalDiscount());
+        product.display.display("Discount ",product.productaccessories.Currency, calculateTotalDiscount());
         DisplayCostSeperatly();
-        product.display.display("Total is $  ", calculatePriceAfter());
+        product.display.display("Total is " , product.productaccessories.Currency, calculatePriceAfter());
         Console.WriteLine();
 
 
@@ -37,7 +37,7 @@ class productFacade
             if (product.productPercentage[i].Type != "cost") continue;
             Cost costObj = (Cost)product.productPercentage[i];
             result = costObj.calculate(product.productPercentage[i].Percentage, priceBeforeTax);
-            product.display.display(costObj.Description+" $ ", result);
+            product.display.display(costObj.Description,product.productaccessories.Currency, result);
         }
 
     }
