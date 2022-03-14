@@ -32,10 +32,10 @@ class priceCalculaterKataDemo
 
         Dictionary<long, double> mydictionary = new Dictionary<long, double>();
 
+        //CASE 1
         Product product = new Product();
-     
-        //product.discountWay = "additive";
-       
+        product.productaccessories.CAP = (20, ValueType.percentage);
+        //product.productaccessories.discountWay = "additive";
         product.productaccessories.discountWay = "multiplicative";
         Product product2 = new Product();
         product.Name = "mybook";
@@ -43,23 +43,22 @@ class priceCalculaterKataDemo
         product.Price = 20.25;
         mydictionary.Add(product.UPC, product.Price);
         product.addPercentage(twentyonePercenTax);
-      
         product.addPercentage(Udiscount); 
         product.addPercentage(upc);
         product.addPercentage(transport);
         product.addPercentage(packging);
 
-        
 
-        product2.Name = "mychair";
-        product2.UPC = 129;
-        product2.Price = 20.25;
-        product2.addPercentage(twentyonePercenTax);
-        product2.addPercentage(upc);
-        product2.addPercentage(Udiscount);
-        productFacade productfacade2 = new productFacade(product2, product2.productPercentage, mydictionary);
+
         productFacade productfacade = new productFacade(product,product.productPercentage, mydictionary);
         productfacade.Report();
+
+        //CASE 2
+        product.addPercentage(twentyonePercenTax);
+        product.addPercentage(Udiscount);
+        product.addPercentage(upc);
+
+
         //productfacade2.Report();
 
 

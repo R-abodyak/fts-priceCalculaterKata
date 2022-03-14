@@ -47,6 +47,13 @@
 
     }
 
+    public void removePercentage(ProductPercentgeBase ProductPercentgeItem)
+    {
+
+        productPercentage.Remove(ProductPercentgeItem);
+
+
+    }
 
 
 

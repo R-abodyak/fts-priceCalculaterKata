@@ -4,7 +4,7 @@
 class productFacade
 {
     Product product;
-
+    private double price;
     public List<ProductPercentgeBase> productPercentage;
     Dictionary<long, double> dictonary;
    public  productFacade(Product product , List<ProductPercentgeBase> productPercentage, Dictionary<long,double>dictonary )
@@ -12,7 +12,7 @@ class productFacade
         this.product = product;
         this.productPercentage = productPercentage;
         this.dictonary = dictonary;
-
+        price = product.Price;
     }
 
     public void Report()
@@ -98,7 +98,7 @@ class productFacade
     {
         double result = 0;
         double priceBeforeTax = PriceBeforeTax(calculateDiscountBefore());
-        double price = priceBeforeTax;
+        price = product.productaccessories.discountWay == "multiplicative"? price: priceBeforeTax;
         for (int i = 0; i < product.productPercentage.Count; i++)
         {
           
@@ -113,7 +113,9 @@ class productFacade
                 (product.productPercentage[i].Percentage, price);
             if (product.productaccessories.discountWay == "multiplicative")
             {
+                
                 price -= discount;
+                Console.WriteLine("re"+price);
 
             }
             result += discount;
@@ -128,7 +130,7 @@ class productFacade
     private double calculateDiscountBefore()
     {
         double result = 0;
-        double price = product.Price;
+         price = product.Price;
         for (int i = 0; i < product.productPercentage.Count; i++)
         {
             if ((product.productPercentage[i].Type != "discount" && product.productPercentage[i].Type != "upcdiscount")) continue;
