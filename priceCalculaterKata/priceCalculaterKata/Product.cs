@@ -54,6 +54,13 @@
 
 
     }
+    public void removeAllPercentage()
+    {
+
+        productPercentage.Clear();
+
+
+    }
 
 
 

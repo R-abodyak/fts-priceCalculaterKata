@@ -24,6 +24,7 @@ class productFacade
         product.display.display("Discount $", calculateTotalDiscount());
         DisplayCostSeperatly();
         product.display.display("Total is $  ", calculatePriceAfter());
+        Console.WriteLine();
 
 
     }

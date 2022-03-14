@@ -35,8 +35,8 @@ class priceCalculaterKataDemo
         //CASE 1
         Product product = new Product();
         product.productaccessories.CAP = (20, ValueType.percentage);
-        //product.productaccessories.discountWay = "additive";
-        product.productaccessories.discountWay = "multiplicative";
+        product.productaccessories.discountWay = "additive";
+        //product.productaccessories.discountWay = "multiplicative";
         Product product2 = new Product();
         product.Name = "mybook";
         product.UPC = 123;
@@ -45,20 +45,27 @@ class priceCalculaterKataDemo
         product.addPercentage(twentyonePercenTax);
         product.addPercentage(Udiscount); 
         product.addPercentage(upc);
-        product.addPercentage(transport);
-        product.addPercentage(packging);
-
-
-
+        
         productFacade productfacade = new productFacade(product,product.productPercentage, mydictionary);
         productfacade.Report();
 
         //CASE 2
+        product.removeAllPercentage();
         product.addPercentage(twentyonePercenTax);
         product.addPercentage(Udiscount);
         product.addPercentage(upc);
+        product.productaccessories.discountWay = "additive";
+        product.productaccessories.CAP = (4, ValueType.absolute);
+        productfacade.Report();
 
-
+        //Case 3
+        product.removeAllPercentage();
+        product.addPercentage(twentyonePercenTax);
+        product.addPercentage(Udiscount);
+        product.addPercentage(upc);
+        product.productaccessories.discountWay = "additive";
+        product.productaccessories.CAP = (30, ValueType.percentage);
+        productfacade.Report();
         //productfacade2.Report();
 
 
@@ -67,5 +74,5 @@ class priceCalculaterKataDemo
 
 
     }
-    
+
 }
