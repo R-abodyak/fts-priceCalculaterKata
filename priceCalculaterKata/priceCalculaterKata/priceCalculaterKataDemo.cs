@@ -36,6 +36,8 @@ class priceCalculaterKataDemo
         Product product = new Product();
         product.productaccessories.CAP = (20, ValueType.percentage);
         product.productaccessories.discountWay = "additive";
+        product.productaccessories.Currency = ISO3.USD;
+
         //product.productaccessories.discountWay = "multiplicative";
         Product product2 = new Product();
         product.Name = "mybook";
@@ -51,6 +53,7 @@ class priceCalculaterKataDemo
 
         //CASE 2
         product.removeAllPercentage();
+        product.productaccessories.Currency = ISO3.GBP;
         product.addPercentage(twentyonePercenTax);
         product.addPercentage(Udiscount);
         product.addPercentage(upc);

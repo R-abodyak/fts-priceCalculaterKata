@@ -8,12 +8,14 @@
         
 
     }
-    public void display(String msg , double val)
+    public void display(String msg , ISO3 currency,double val)
     {   if (val == 0) return;
         pricePrintingFormat();
         Console.Write(msg);
-        Console.WriteLine(formatString, val);
-        
+        Console.Write(formatString, val);
+        Console.WriteLine(" "+currency);
+
+
     }
 
 
