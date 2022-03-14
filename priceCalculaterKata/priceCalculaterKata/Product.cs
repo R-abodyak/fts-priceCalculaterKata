@@ -5,11 +5,12 @@
     private double price;
     public List<ProductPercentgeBase> productPercentage;
     public Display display;
-    
+    public ProductAccessories productaccessories;
    public Product()
     {
         productPercentage = new List<ProductPercentgeBase>();//create pricecalculation obj when create product
         display = new Display();
+        productaccessories = new ProductAccessories(price);
     }
     
 
@@ -33,12 +34,9 @@
         {
             
            price = Math.Round(value, 2);
-              
+            productaccessories.updateBasePrice(value);
         }
     }
-    public String discountWay
-    { get; set; }
-        
 
     //percentage obj will be instanced in run time since
     //for example :its possible in real life to apply same tax in different products 
@@ -49,6 +47,20 @@
 
     }
 
+    public void removePercentage(ProductPercentgeBase ProductPercentgeItem)
+    {
+
+        productPercentage.Remove(ProductPercentgeItem);
+
+
+    }
+    public void removeAllPercentage()
+    {
+
+        productPercentage.Clear();
+
+
+    }
 
 
 
