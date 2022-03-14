@@ -28,14 +28,14 @@ class priceCalculaterKataDemo
 
         ProductPercentgeBase upc = new Discount(7, false, "upcdiscount");
         ProductPercentgeBase packging = new Cost(1,true,"packging cost");
-        ProductPercentgeBase transport = new Cost(2.2, false, "transport cost");
+        ProductPercentgeBase transport = new Cost(3, true, "transport cost");
 
         Dictionary<long, double> mydictionary = new Dictionary<long, double>();
 
         //CASE 1
         Product product = new Product();
-        product.productaccessories.CAP = (20, ValueType.percentage);
-        product.productaccessories.discountWay = "additive";
+       // product.productaccessories.CAP = (20, ValueType.percentage);
+        product.productaccessories.discountWay = "multiplicative";
         product.productaccessories.Currency = ISO3.USD;
 
         //product.productaccessories.discountWay = "multiplicative";
@@ -47,28 +47,10 @@ class priceCalculaterKataDemo
         product.addPercentage(twentyonePercenTax);
         product.addPercentage(Udiscount); 
         product.addPercentage(upc);
-        
+        product.addPercentage(transport);
         productFacade productfacade = new productFacade(product,product.productPercentage, mydictionary);
         productfacade.Report();
 
-        //CASE 2
-        product.removeAllPercentage();
-        product.productaccessories.Currency = ISO3.GBP;
-        product.addPercentage(twentyonePercenTax);
-        product.addPercentage(Udiscount);
-        product.addPercentage(upc);
-        product.productaccessories.discountWay = "additive";
-        product.productaccessories.CAP = (4, ValueType.absolute);
-        productfacade.Report();
-
-        //Case 3
-        product.removeAllPercentage();
-        product.addPercentage(twentyonePercenTax);
-        product.addPercentage(Udiscount);
-        product.addPercentage(upc);
-        product.productaccessories.discountWay = "additive";
-        product.productaccessories.CAP = (30, ValueType.percentage);
-        productfacade.Report();
         //productfacade2.Report();
 
 

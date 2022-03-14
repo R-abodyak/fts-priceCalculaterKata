@@ -27,11 +27,11 @@
         set { description = value; }
     }
 
-    public override double  calculate(double percentage ,double price)
+    public override double  calculate(double percentage ,double price,int precision)
     {
         if (!ispercentage) return Amount;
 
-        return base.calculate(percentage,price);
+        return base.calculate(percentage,price, precision);
        
     }
 }

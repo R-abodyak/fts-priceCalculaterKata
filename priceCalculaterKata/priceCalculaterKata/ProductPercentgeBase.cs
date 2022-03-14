@@ -18,9 +18,9 @@
         set { type = value; }
     }
 
-    public  virtual double  calculate( double percentage ,double price)
+    public  virtual double  calculate( double percentage ,double price,int repecision)
     {
 
-        return Math.Round((percentage / 100) * price, 2);
+        return Math.Round((percentage / 100) * price, repecision);
     }
 }
