@@ -53,6 +53,7 @@ class priceCalculaterKataDemo
 
         //CASE 2
         product.removeAllPercentage();
+        product.productaccessories.Currency = ISO3.GBP;
         product.addPercentage(twentyonePercenTax);
         product.addPercentage(Udiscount);
         product.addPercentage(upc);
