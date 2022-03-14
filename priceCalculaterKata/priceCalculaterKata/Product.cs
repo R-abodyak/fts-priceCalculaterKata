@@ -10,7 +10,7 @@
     {
         productPercentage = new List<ProductPercentgeBase>();//create pricecalculation obj when create product
         display = new Display();
-        productaccessories = new ProductAccessories();
+        productaccessories = new ProductAccessories(price);
     }
     
 
@@ -34,7 +34,7 @@
         {
             
            price = Math.Round(value, 2);
-              
+            productaccessories.updateBasePrice(value);
         }
     }
 
@@ -48,13 +48,6 @@
     }
 
 
-
-
-}
-class ProductAccessories
-{
-    public String discountWay
-    { get; set; }
 
 
 }
