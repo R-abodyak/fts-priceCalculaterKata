@@ -7,6 +7,7 @@
     private ISO3 currency;
     public ProductAccessories(double basePrice) {
         this.basePrice = basePrice;
+        cap.amount = double.PositiveInfinity;//so if cap was not determine ,discount will be taken
     }
     public ISO3 Currency
     {
